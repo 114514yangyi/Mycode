@@ -1,0 +1,3 @@
+echo "开始检查系统更新"
+sudo pacman -Syyu
+

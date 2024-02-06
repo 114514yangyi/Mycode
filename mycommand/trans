@@ -1,0 +1,3 @@
+#!/bin/bash
+
+python /home/huyang/Document/python-project/translator.py $1
