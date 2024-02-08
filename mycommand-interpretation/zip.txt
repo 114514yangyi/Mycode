@@ -1,0 +1,10 @@
+#压缩文件
+tar -cvf [压缩文件.tar] [被压缩文件]
+tar -zcvf [压缩文件.tar.gz] [被压缩文件]
+#解压文件
+tar -xvf [被解压的文件.tar]
+tar -xvf [被解压文件.tar] -C [路径]
+tar -zxvf [被解压文件.tar.gz]  -C[路径]
+#zip 解压缩
+zip [-r] [文件名]
+
