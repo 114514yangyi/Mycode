@@ -1,8 +1,7 @@
-import urllib.request
-import urllib.parse
+import requests
 import sys
 import json
-
+import random
 
 
 if __name__ == "__main__":
@@ -20,17 +19,21 @@ if __name__ == "__main__":
     }
 
     data["kw"]=word
+    
+    with open("/home/huyang/Document/python-project/proxies_pool.json","r") as fp:
+        proxies_pool=json.loads(fp.read())
+    
+    proxies=random.choice(proxies_pool)
+    
+    print(f"ip-address:{proxies['http']}")
 
-    data=urllib.parse.urlencode(data).encode('utf-8')
 
+    response=requests.post(url=url,data=data,headers=headers,proxies=proxies)
 
-    request=urllib.request.Request(url=url,data=data,headers=headers)
-
-
-    response=urllib.request.urlopen(request)
-
-    content=response.read().decode('utf-8')
-
+    response.encoding='utf-8'
+    
+    content=response.text
+    
     obj=json.loads(content)
 
     result=obj['data']

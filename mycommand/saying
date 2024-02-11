@@ -1,0 +1,4 @@
+#!/bin/bash
+
+python /home/huyang/Document/python-project/saying.py
+

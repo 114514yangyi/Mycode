@@ -1,3 +1,4 @@
 echo "开始检查系统更新"
+/home/huyang/Document/python-project/.venv/bin/python ~/Document/python-project/get-proxies_pool.py
 sudo pacman -Syyu
 
